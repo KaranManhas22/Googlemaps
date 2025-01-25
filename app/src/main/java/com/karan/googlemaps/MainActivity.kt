@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     var Gmaps: GoogleMap? = null
     var userLocation = LatLng(0.0, 0.0)
-    var markerOptions = MarkerOptions() //location marker
+    var markerOptions = MarkerOptions() //location marke
     var centerMarker: Marker? = null
 
     private val locationPermission = arrayOf(
@@ -215,7 +215,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions().position(userLocation)
         )
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, 15f))
-        map?.setOnCameraIdleListener {
+        map.setOnCameraIdleListener {
             userLocation = map.cameraPosition.target
             updateMarker()
         }
